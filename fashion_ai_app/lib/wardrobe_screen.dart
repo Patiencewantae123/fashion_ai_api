@@ -3,6 +3,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class WardrobeScreen extends StatefulWidget {
+  const WardrobeScreen({super.key});
+
   @override
   _WardrobeScreenState createState() => _WardrobeScreenState();
 }
@@ -29,14 +31,14 @@ class _WardrobeScreenState extends State<WardrobeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Kitenge Wardrobe"),
+        title: const Text("My Kitenge Wardrobe"),
       ),
       // Left side drawer
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Menu',
@@ -47,15 +49,15 @@ class _WardrobeScreenState extends State<WardrobeScreen> {
               ),
             ),
             ListTile(
-              title: Text('Wardrobe'),
+              title: const Text('Wardrobe'),
               onTap: () => _onDrawerItemTapped('Wardrobe'),
             ),
             ListTile(
-              title: Text('Settings'),
+              title: const Text('Settings'),
               onTap: () => _onDrawerItemTapped('Settings'),
             ),
             ListTile(
-              title: Text('About'),
+              title: const Text('About'),
               onTap: () => _onDrawerItemTapped('About'),
             ),
           ],
@@ -70,17 +72,17 @@ class _WardrobeScreenState extends State<WardrobeScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               _image == null
-                  ? Text("No Kitenge image selected.")
+                  ? const Text("No Kitenge image selected.")
                   : Image.file(File(_image!.path)),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _pickImage,
-                child: Text("Upload Kitenge Outfit"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 128, 108, 78),
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  textStyle: TextStyle(fontSize: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  textStyle: const TextStyle(fontSize: 16),
                 ),
+                child: Text("Upload Kitenge Outfit"),
               ),
             ],
           ),

@@ -8,6 +8,8 @@ void main() {
 }
 
 class KitengeFashionApp extends StatelessWidget {
+  const KitengeFashionApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,6 +25,8 @@ class KitengeFashionApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -53,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
             label: 'Explore',
